@@ -1,0 +1,656 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:owl="http://www.w3.org/2002/07/owl#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns="http://www.owl-ontologies.com/freelancer.owl#"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+        xml:base="http://www.owl-ontologies.com/freelancer.owl">
+  <owl:Ontology rdf:about=""/>
+
+  <!-- Class Definitions -->
+  <owl:Class rdf:ID="Freelancer">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Personne"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:ID="Skills">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Competence"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:ID="Conge">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Evenement"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:ID="TypeConge">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="TypeEvenement"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:ID="Projet">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Evenement"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:ID="CategoriesProjet">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Categorie"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:ID="Contact">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Personne"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:ID="Reclamation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Evenement"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:ID="OffreEmploi">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Evenement"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+  <owl:Class rdf:ID="DetailOffreEmploi">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="TypeEvenement"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+
+<owl:Class rdf:ID="Contrat">
+  <rdfs:subClassOf rdf:resource="#Evenement"/>
+</owl:Class>
+
+<owl:Class rdf:ID="Deliverable">
+  <rdfs:subClassOf rdf:resource="#Evenement"/>
+</owl:Class>
+
+
+  <!-- Data Properties (Attributes) -->
+    <owl:DatatypeProperty rdf:ID="name_freelancer">
+      <rdfs:domain rdf:resource="#Freelancer"/>
+      <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:ID="family_name_freelancer">
+        <rdfs:domain rdf:resource="#Freelancer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:DatatypeProperty>
+      <owl:DatatypeProperty rdf:ID="email_freelancer">
+          <rdfs:domain rdf:resource="#Freelancer"/>
+          <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:DatatypeProperty>
+
+      <owl:DatatypeProperty rdf:ID="name_skill">
+           <rdfs:domain rdf:resource="#Skills"/>
+           <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:DatatypeProperty>
+      <owl:DatatypeProperty rdf:ID="description_skill">
+           <rdfs:domain rdf:resource="#Skills"/>
+           <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:DatatypeProperty>
+
+      <owl:DatatypeProperty rdf:ID="nom_projet">
+        <rdfs:domain rdf:resource="#Projet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:DatatypeProperty>
+      <owl:DatatypeProperty rdf:ID="description_projet">
+        <rdfs:domain rdf:resource="#Projet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:DatatypeProperty>
+      <owl:DatatypeProperty rdf:ID="budget_projet">
+        <rdfs:domain rdf:resource="#Projet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+      </owl:DatatypeProperty>
+      <owl:DatatypeProperty rdf:ID="competences_requises">
+        <rdfs:domain rdf:resource="#Projet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:DatatypeProperty>
+
+       <owl:DatatypeProperty rdf:ID="nom_categorie">
+        <rdfs:domain rdf:resource="#CategoriesProjet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:DatatypeProperty>
+      <owl:DatatypeProperty rdf:ID="description_categorie">
+        <rdfs:domain rdf:resource="#CategoriesProjet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      </owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="titre_offre">
+    <rdfs:domain rdf:resource="#OffreEmploi"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="lieu_offre">
+    <rdfs:domain rdf:resource="#OffreEmploi"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="description_offre">
+    <rdfs:domain rdf:resource="#OffreEmploi"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="date_publication_offre">
+    <rdfs:domain rdf:resource="#OffreEmploi"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="description_detail_offre_emploi">
+    <rdfs:domain rdf:resource="#DetailOffreEmploi"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="duree_detail_offre_emploi">
+    <rdfs:domain rdf:resource="#DetailOffreEmploi"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="budget_detail_offre_emploi">
+    <rdfs:domain rdf:resource="#DetailOffreEmploi"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="date_limite_detail_offre_emploi">
+    <rdfs:domain rdf:resource="#DetailOffreEmploi"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="date_conge">
+    <rdfs:domain rdf:resource="#Conge"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="nombre_conge">
+    <rdfs:domain rdf:resource="#Conge"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="motif_conge">
+    <rdfs:domain rdf:resource="#Conge"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="report_conge">
+    <rdfs:domain rdf:resource="#Conge"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="name_type_conge">
+    <rdfs:domain rdf:resource="#TypeConge"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="description_type_conge">
+    <rdfs:domain rdf:resource="#TypeConge"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="email_contact">
+    <rdfs:domain rdf:resource="#Contact"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="date_naissance_contact">
+    <rdfs:domain rdf:resource="#Contact"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="poste_contact">
+    <rdfs:domain rdf:resource="#Contact"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="note_contact">
+    <rdfs:domain rdf:resource="#Contact"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="sujet_reclamation">
+    <rdfs:domain rdf:resource="#Reclamation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="message_reclamation">
+    <rdfs:domain rdf:resource="#Reclamation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="date_contrat">
+    <rdfs:domain rdf:resource="#Contrat"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="money_amount_contrat">
+    <rdfs:domain rdf:resource="#Contrat"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="status_contrat">
+    <rdfs:domain rdf:resource="#Contrat"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:ID="name_deliverable">
+    <rdfs:domain rdf:resource="#Deliverable"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="description_deliverable">
+    <rdfs:domain rdf:resource="#Deliverable"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="deadline_deliverable">
+    <rdfs:domain rdf:resource="#Deliverable"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="type_deliverable">
+    <rdfs:domain rdf:resource="#Deliverable"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:ID="review_deliverable">
+    <rdfs:domain rdf:resource="#Deliverable"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+    <!-- Object Properties (Relationships) -->
+    <owl:ObjectProperty rdf:ID="hasSkill">
+      <rdfs:domain rdf:resource="#Freelancer"/>
+      <rdfs:range rdf:resource="#Skills"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:ID="worksOnProject">
+      <rdfs:domain rdf:resource="#Freelancer"/>
+      <rdfs:range rdf:resource="#Projet"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:ID="hasContact">
+      <rdfs:domain rdf:resource="#Freelancer"/>
+      <rdfs:range rdf:resource="#Contact"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:ID="hasReclamation">
+      <rdfs:domain rdf:resource="#Freelancer"/>
+      <rdfs:range rdf:resource="#Reclamation"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:ID="hasOffreEmploi">
+      <rdfs:domain rdf:resource="#Freelancer"/>
+      <rdfs:range rdf:resource="#OffreEmploi"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:ID="worksInCategory">
+      <rdfs:domain rdf:resource="#Projet"/>
+      <rdfs:range rdf:resource="#CategoriesProjet"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:ID="worksOnSkill">
+      <rdfs:domain rdf:resource="#Projet"/>
+      <rdfs:range rdf:resource="#Skills"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:ID="hasType">
+      <rdfs:domain rdf:resource="#Conge"/>
+      <rdfs:range rdf:resource="#TypeConge"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:ID="aboutReclamation">
+      <rdfs:domain rdf:resource="#Reclamation"/>
+      <rdfs:range rdf:resource="#OffreEmploi"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:ID="relatedToReclamation">
+      <rdfs:domain rdf:resource="#Reclamation"/>
+      <rdfs:range rdf:resource="#Contact"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:ID="relatesToOffreEmploi">
+      <rdfs:domain rdf:resource="#Reclamation"/>
+      <rdfs:range rdf:resource="#OffreEmploi"/>
+    </owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasContrat">
+  <rdfs:domain rdf:resource="#Freelancer"/>
+  <rdfs:range rdf:resource="#Contrat"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="hasDeliverable">
+  <rdfs:domain rdf:resource="#Freelancer"/>
+  <rdfs:range rdf:resource="#Deliverable"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:ID="worksInCategory">
+  <rdfs:domain rdf:resource="#Projet"/>
+  <rdfs:range rdf:resource="#CategoriesProjet"/>
+</owl:ObjectProperty>
+
+<!-- instances--><!-- instances-->
+                 <rdf:Description rdf:about="#freelancer1">
+                     <rdf:type rdf:resource="#Freelancer"/>
+                     <id_freelancer>1001</id_freelancer>
+                     <name_freelancer>John</name_freelancer>
+                     <family_name_freelancer>Doe</family_name_freelancer>
+                     <email_freelancer>john.doe@example.com</email_freelancer>
+                     <hasSkill rdf:resource="#skills1"/>
+                     <hasContact rdf:resource="#contact1"/>
+                     <hasOffreEmploi rdf:resource="#offreEmploi1"/>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#freelancer2">
+                     <rdf:type rdf:resource="#Freelancer"/>
+                     <id_freelancer>1002</id_freelancer>
+                     <name_freelancer>Jane</name_freelancer>
+                     <family_name_freelancer>Smith</family_name_freelancer>
+                     <email_freelancer>jane.smith@example.com</email_freelancer>
+                     <hasSkill rdf:resource="#skills2"/>
+                     <hasContact rdf:resource="#contact2"/>
+                     <hasOffreEmploi rdf:resource="#offreEmploi2"/>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#freelancer3">
+                     <rdf:type rdf:resource="#Freelancer"/>
+                     <id_freelancer>1003</id_freelancer>
+                     <name_freelancer>Michael</name_freelancer>
+                     <family_name_freelancer>Johnson</family_name_freelancer>
+                     <email_freelancer>michael.johnson@example.com</email_freelancer>
+                     <hasSkill rdf:resource="#skills3"/>
+                     <hasContact rdf:resource="#contact3"/>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#freelancer4">
+                     <rdf:type rdf:resource="#Freelancer"/>
+                     <id_freelancer>1004</id_freelancer>
+                     <name_freelancer>Linda</name_freelancer>
+                     <family_name_freelancer>Williams</family_name_freelancer>
+                     <email_freelancer>linda.williams@example.com</email_freelancer>
+                     <hasSkill rdf:resource="#skills4"/>
+                     <hasContact rdf:resource="#contact4"/>
+                 </rdf:Description>
+  <Freelancer rdf:about="#Freelancer1">
+        <name_freelancer>Hugo</name_freelancer>
+        <family_name_freelancer>Doe</family_name_freelancer>
+        <!-- Ajoutez d'autres propriétés Freelancer si nécessaire -->
+
+        <!-- Relation worksOnProject -->
+        <worksOnProject rdf:resource="#Projet1" />
+    </Freelancer>
+
+    <!-- Instance de Projet -->
+    <Projet rdf:about="#Projet1">
+        <nom_projet>Projet A</nom_projet>
+        <description_projet>Un projet très intéressant</description_projet>
+        <budget_projet>10000</budget_projet>
+        <competences_requises>Java, SQL, HTML</competences_requises>
+        <!-- Ajoutez d'autres propriétés Projet si nécessaire -->
+    </Projet>
+
+     <Projet rdf:about="#Projet2">
+            <nom_projet>Projet A</nom_projet>
+            <description_projet>Un projet très intéressant</description_projet>
+            <budget_projet>10000</budget_projet>
+            <competences_requises>Java, SQL, HTML</competences_requises>
+            <!-- Ajoutez d'autres propriétés Projet si nécessaire -->
+        </Projet>
+
+                 <rdf:Description rdf:about="#projet3">
+                     <rdf:type rdf:resource="#Projet"/>
+                     <nom_projet>Projet Informatique 1</nom_projet>
+                     <description_projet>Un projet informatique passionnant.</description_projet>
+                     <budget_projet>10000</budget_projet>
+                     <competences_requises>Programmation Java, Développement Web</competences_requises>
+                     <worksInCategory rdf:resource="#categorie1"/>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#projet4">
+                     <rdf:type rdf:resource="#Projet"/>
+                     <name_projet>Projet Design 1</name_projet>
+                     <description_projet>Un projet de conception graphique créatif.</description_projet>
+                     <budget_projet>8000</budget_projet>
+                     <competences_requises>Design graphique, Illustration</competences_requises>
+                     <worksInCategory rdf:resource="#categorie2"/>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#offreEmploi1">
+                     <rdf:type rdf:resource="#OffreEmploi"/>
+                     <!-- Ajoutez d'autres attributs de OffreEmploi ici -->
+                     <hasDetailOffre rdf:resource="#detailOffre1"/>
+                     <hasFreelance rdf:resource="#freelance1"/>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#offreEmploi2">
+                     <rdf:type rdf:resource="#OffreEmploi"/>
+                     <!-- Ajoutez d'autres attributs de OffreEmploi ici -->
+                     <hasDetailOffre rdf:resource="#detailOffre2"/>
+                     <hasFreelance rdf:resource="#freelance2"/>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#detailOffre1">
+                     <rdf:type rdf:resource="#DetailOffreEmploi"/>
+                     <description_detail_offre_emploi>Une description d'offre d'emploi 1</description_detail_offre_emploi>
+                     <duree_detail_offre_emploi>2023-10-31</duree_detail_offre_emploi>
+                     <budget_detail_offre_emploi>5000.00</budget_detail_offre_emploi>
+                     <date_limite_detail_offre_emploi>2023-11-15</date_limite_detail_offre_emploi>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#detailOffre2">
+                     <rdf:type rdf:resource="#DetailOffreEmploi"/>
+                     <description_detail_offre_emploi>Une description d'offre d'emploi 2</description_detail_offre_emploi>
+                     <duree_detail_offre_emploi>2023-11-15</duree_detail_offre_emploi>
+                     <budget_detail_offre_emploi>7500.50</budget_detail_offre_emploi>
+                     <date_limite_detail_offre_emploi>2023-12-01</date_limite_detail_offre_emploi>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#CongeInstance1">
+                     <rdf:type rdf:resource="#Conge"/>
+                     <date_conge>2023-10-29</date_conge>
+                     <nombre_conge>10.5</nombre_conge>
+                     <motif_conge>Annual Leave</motif_conge>
+                     <report_conge>No</report_conge>
+                     <hasType rdf:resource="#TypeCongeInstance1"/>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#CongeInstance2">
+                     <rdf:type rdf:resource="#Conge"/>
+                     <date_conge>2023-11-15</date_conge>
+                     <nombre_conge>7.5</nombre_conge>
+                     <motif_conge>Sick Leave</motif_conge>
+                     <report_conge>Yes</report_conge>
+                     <hasType rdf:resource="#TypeCongeInstance2"/>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#TypeCongeInstance1">
+                     <rdf:type rdf:resource="#TypeConge"/>
+                     <name_type_conge>Annual Leave</name_type_conge>
+                     <description_type_conge>Paid time off for vacations</description_type_conge>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#TypeCongeInstance2">
+                     <rdf:type rdf:resource="#TypeConge"/>
+                     <name_type_conge>Sick Leave</name_type_conge>
+                     <description_type_conge>Leave for medical reasons</description_type_conge>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#ContactInstance1">
+                       <rdf:type rdf:resource="#Contact"/>
+                       <email_contact>john.doe@example.com</email_contact>
+                       <date_naissance_contact>1985-05-20</date_naissance_contact>
+                       <poste_contact>Manager</poste_contact>
+                       <note_contact>Excellent team player</note_contact>
+                       <hasReclamation rdf:resource="#ReclamationInstance1"/>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#ContactInstance2">
+                        <rdf:type rdf:resource="#Contact"/>
+                        <email_contact>jane.smith@example.com</email_contact>
+                        <date_naissance_contact>1990-12-15</date_naissance_contact>
+                        <poste_contact>Engineer</poste_contact>
+                        <note_contact>Strong problem-solving skills</note_contact>
+                        <hasReclamation rdf:resource="#ReclamationInstance2"/>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#ReclamationInstance1">
+                         <rdf:type rdf:resource="#Reclamation"/>
+                         <sujet_reclamation>Product Quality Issue</sujet_reclamation>
+                         <message_reclamation>Received a defective product</message_reclamation>
+                         <aboutReclamation rdf:resource="#offreEmploi1"/>
+                         <relatedToReclamation rdf:resource="#ContactInstance1"/>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#ReclamationInstance2">
+                         <rdf:type rdf:resource="#Reclamation"/>
+                         <sujet_reclamation>Delivery Delay</sujet_reclamation>
+                         <message_reclamation>My order is delayed, please expedite.</message_reclamation>
+                         <aboutReclamation rdf:resource="#offreEmploi2"/>
+                         <relatedToReclamation rdf:resource="#ContactInstance2"/>
+                 </rdf:Description>
+
+
+
+                 <rdf:Description rdf:about="#deliverable1">
+                     <rdf:type rdf:resource="#Deliverable"/>
+                     <name_deliverable>Livraison 1</name_deliverable>
+                     <description_deliverable>Un livrable important pour le projet 1</description_deliverable>
+                     <deadline_deliverable>2023-11-30</deadline_deliverable>
+                     <type_deliverable>Phase 1</type_deliverable>
+                     <review_deliverable>En attente de révision</review_deliverable>
+                     <hasFreelancer rdf:resource="#freelancer1"/>
+                     <hasProjet rdf:resource="#projet1"/>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#deliverable2">
+                     <rdf:type rdf:resource="#Deliverable"/>
+                     <name_deliverable>Livraison 2</name_deliverable>
+                     <description_deliverable>Un autre livrable pour le projet 2</description_deliverable>
+                     <deadline_deliverable>2023-12-15</deadline_deliverable>
+                     <type_deliverable>Phase 2</type_deliverable>
+                     <review_deliverable>Approuvé</review_deliverable>
+                     <hasFreelancer rdf:resource="#freelancer2"/>
+                     <hasProjet rdf:resource="#projet2"/>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#contrat1">
+                     <rdf:type rdf:resource="#Contrat"/>
+                     <name_contrat>Contrat 1</name_contrat>
+                     <date_contrat>2023-10-30</date_contrat>
+                     <money_amount_contrat>7500.00</money_amount_contrat>
+                     <status_contrat>En cours</status_contrat>
+                     <hasFreelancer rdf:resource="#freelancer3"/>
+                     <hasProjet rdf:resource="#projet1"/>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#contrat2">
+                     <rdf:type rdf:resource="#Contrat"/>
+                     <name_contrat>Contrat 2</name_contrat>
+                     <date_contrat>2023-11-20</date_contrat>
+                     <money_amount_contrat>5000.00</money_amount_contrat>
+                     <status_contrat>Terminé</status_contrat>
+                     <hasFreelancer rdf:resource="#freelancer4"/>
+                     <hasProjet rdf:resource="#projet2"/>
+                 </rdf:Description>
+<!-- Instances de Catégories de Projet -->
+<rdf:Description rdf:about="#categorie1">
+    <rdf:type rdf:resource="#CategoriesProjet"/>
+    <nom_categorie>Informatique</nom_categorie>
+    <description_categorie>Catégorie liée à l'informatique.</description_categorie>
+</rdf:Description>
+
+<rdf:Description rdf:about="#categorie2">
+    <rdf:type rdf:resource="#CategoriesProjet"/>
+    <nom_categorie>Design</nom_categorie>
+    <description_categorie>Catégorie liée au design graphique.</description_categorie>
+</rdf:Description>
+
+<!-- Instances de Projet liés à ces Catégories -->
+<rdf:Description rdf:about="#projet6">
+    <rdf:type rdf:resource="#Projet"/>
+    <nom_projet>Projet Informatique 5</nom_projet>
+    <description_projet>Un projet informatique motivant.</description_projet>
+    <budget_projet>10000</budget_projet>
+    <competences_requises>Programmation Java, Développement Web</competences_requises>
+    <worksInCategory rdf:resource="#categorie1"/>
+</rdf:Description>
+<!-- Add 4 instances of Skills -->
+<rdf:Description rdf:about="#skills1">
+    <rdf:type rdf:resource="#Skills"/>
+    <name_skill>Skill 1</name_skill>
+    <description_skill>Description of Skill 1</description_skill>
+</rdf:Description>
+
+<rdf:Description rdf:about="#skills2">
+    <rdf:type rdf:resource="#Skills"/>
+    <name_skill>Skill 2</name_skill>
+    <description_skill>Description of Skill 2</description_skill>
+</rdf:Description>
+
+<rdf:Description rdf:about="#skills3">
+    <rdf:type rdf:resource="#Skills"/>
+    <name_skill>Skill 3</name_skill>
+    <description_skill>Description of Skill 3</description_skill>
+</rdf:Description>
+
+<rdf:Description rdf:about="#skills4">
+    <rdf:type rdf:resource="#Skills"/>
+    <name_skill>Skill 4</name_skill>
+    <description_skill>Description of Skill 4</description_skill>
+</rdf:Description>
+
+
+
+<!-- Ajoutez ces instances dans votre fichier freelancer.owl -->
+
+<!-- Instances de Catégories de Projet -->
+<rdf:Description rdf:about="#categorie1">
+    <rdf:type rdf:resource="#CategoriesProjet"/>
+    <nom_categorie>Informatique</nom_categorie>
+    <description_categorie>Catégorie liée à l'informatique.</description_categorie>
+</rdf:Description>
+
+<rdf:Description rdf:about="#categorie2">
+    <rdf:type rdf:resource="#CategoriesProjet"/>
+    <nom_categorie>Design</nom_categorie>
+    <description_categorie>Catégorie liée au design graphique.</description_categorie>
+</rdf:Description>
+
+<!-- Instances de Projet liés à ces Catégories -->
+<rdf:Description rdf:about="#projet6">
+    <rdf:type rdf:resource="#Projet"/>
+    <nom_projet>Projet Informatique 5</nom_projet>
+    <description_projet>Un projet informatique motivant.</description_projet>
+    <budget_projet>10000</budget_projet>
+    <competences_requises>Programmation Java, Développement Web</competences_requises>
+    <worksInCategory rdf:resource="#categorie1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="#projet10">
+    <rdf:type rdf:resource="#Projet"/>
+    <nom_projet>Projet Design 1</nom_projet>
+    <description_projet>Un projet de conception graphique créatif.</description_projet>
+    <budget_projet>8000</budget_projet>
+    <competences_requises>Design graphique, Illustration</competences_requises>
+    <worksInCategory rdf:resource="#categorie2"/>
+</rdf:Description>
+
+
+<rdf:Description rdf:about="#projet8">
+    <rdf:type rdf:resource="#Projet"/>
+    <name_projet>Projet Design 1</name_projet>
+    <description_projet>Un projet de conception graphique créatif.</description_projet>
+    <budget_projet>8000</budget_projet>
+    <competences_requises>Design graphique, Illustration</competences_requises>
+    <worksInCategory rdf:resource="#categorie2"/>
+</rdf:Description>
+<rdf:Description rdf:about="#offreEmploi1">
+                     <rdf:type rdf:resource="#OffreEmploi"/>
+                     <titre_offre>Offre d'emploi 1</titre_offre>
+                     <lieu_offre>Paris, France</lieu_offre>
+                     <description_offre>Opportunité passionnante pour un développeur Web.</description_offre>
+                     <date_publication_offre>2023-10-30</date_publication_offre>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#offreEmploi2">
+                     <rdf:type rdf:resource="#OffreEmploi"/>
+                     <titre_offre>Offre d'emploi 2</titre_offre>
+                     <lieu_offre>New York, USA</lieu_offre>
+                     <description_offre>Poste de designer graphique ouvert.</description_offre>
+                     <date_publication_offre>2023-11-01</date_publication_offre>
+                 </rdf:Description>
+<rdf:Description rdf:about="#offreEmploi1">
+                     <rdf:type rdf:resource="#OffreEmploi"/>
+                     <titre_offre>Offre d'emploi 1</titre_offre>
+                     <lieu_offre>Paris, France</lieu_offre>
+                     <description_offre>Opportunité passionnante pour un développeur Web.</description_offre>
+                     <date_publication_offre>2023-10-30</date_publication_offre>
+                 </rdf:Description>
+
+                 <rdf:Description rdf:about="#offreEmploi2">
+                     <rdf:type rdf:resource="#OffreEmploi"/>
+                     <titre_offre>Offre d'emploi 2</titre_offre>
+                     <lieu_offre>New York, USA</lieu_offre>
+                     <description_offre>Poste de designer graphique ouvert.</description_offre>
+                     <date_publication_offre>2023-11-01</date_publication_offre>
+                 </rdf:Description>
+   </rdf:RDF>

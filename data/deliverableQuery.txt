@@ -1,0 +1,13 @@
+PREFIX ns: <http://www.owl-ontologies.com/freelancer.owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?name ?description ?deadline ?type ?review ?freelancer ?projet
+WHERE {
+  ?resource ns:name_deliverable ?name .
+  ?resource ns:description_deliverable ?description .
+  ?resource ns:deadline_deliverable ?deadline .
+  ?resource ns:type_deliverable ?type .
+  ?resource ns:review_deliverable ?review .
+  ?resource ns:hasFreelancer ?freelancer .
+  ?resource ns:hasProjet ?projet
+ }
